@@ -1,0 +1,8 @@
+<div>
+    <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+        <input type="text" class="form-control" formControlName="title" placeholder="*Title">
+        <textarea type="text" class="form-control" formControlName="text" placeholder="*Description"></textarea>
+        <button type="submit" [disabled]="!todoForm.valid" >Add Task</button>
+        <hr>
+    </form>
+</div>

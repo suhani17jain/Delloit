@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="showContainers">
+        <h1>Todo Tasks</h1>
+        <div class="addContainers">
+            <app-make-todo-list (valueChange)='addItemToList($event)'></app-make-todo-list>
+        </div>
+        <div class="displayList">
+            <table id="todoList">
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                </tr>
+                <tr *ngFor="let task of tasks">
+                    <td *ngIf="!task.editing">{{task.title}}</td>
+                    <td *ngIf="!task.editing">{{task.text}}</td>
+                    <td *ngIf="task.editing"><input type="text" [(ngModel)]="task.title"></td>
+                    <td *ngIf="task.editing"><textarea type="text" [(ngModel)]="task.text"></textarea></td>
+                    <td><button (click)="deleteTodoItem(task.id)">Delete</button></td>
+                    <td>
+                        <button *ngIf="!task.editing" (click)="task.editing = true">Edit</button>
+                        <button *ngIf="task.editing" (click)="editListItem(task)">Save</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+    <h1>Overview of TODO List</h1>
+    <input type="text" [(ngModel)]='filteredTitle' placeholder="Search">
+    <table>
+        <tr>
+            <th>Title</th>
+        </tr>
+        <tr *ngFor="let task of tasks | filter:filteredTitle">
+            <td>{{task.title}}</td>
+        </tr>
+    </table>
+</div>

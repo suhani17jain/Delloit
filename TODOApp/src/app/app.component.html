@@ -1,0 +1,10 @@
+<div class="mainContainer">
+    <div class="theme">
+        <input type="checkbox" (click)="toggle($event)" id="dark" value="dark">
+        <label for="dark">Dark Theme</label>
+    </div>
+    <h1>Welcome to TODO App</h1>
+    <button (click)='displayPage("todoList")'>Todo List</button>
+    <button (click)='displayPage("overview")'>Overview</button>
+    <router-outlet></router-outlet>
+</div>

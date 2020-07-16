@@ -1,0 +1,14 @@
+.mainContainer {
+    width: 100%;
+    height: 700px;
+    text-align: center;
+}
+
+button {
+    margin: 0.5em;
+}
+
+.theme {
+    position: relative;
+    left: 46%;
+}
